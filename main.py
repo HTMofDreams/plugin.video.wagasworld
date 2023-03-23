@@ -10,6 +10,7 @@ from urllib.parse import parse_qsl
 import xbmcgui
 import xbmcplugin
 import xbmcaddon
+import xbmcvfs
 import requests
 import json
 import time
@@ -21,7 +22,7 @@ _handle = int(sys.argv[1])
 
 json_x = None
 addon    = xbmcaddon.Addon()
-addonDir = xbmc.translatePath(addon.getAddonInfo('path'))
+addonDir = xbmcvfs.translatePath(addon.getAddonInfo('path'))
 
 def check_version():
     r = None
